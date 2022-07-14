@@ -7,7 +7,7 @@ import { useStateContext } from '../../context/StateContext'
 const ProductDetail= ({product,products}) => {
   const {image,price,name,details} = product;
   const [index,setIndex] = useState(0);
-  const {incqty,decqty,qty,onAdd} = useStateContext();
+  const {incQty,decQty,qty,onAdd} = useStateContext();
  
   return (
     <div>
@@ -15,7 +15,7 @@ const ProductDetail= ({product,products}) => {
     <div className='product-detail-container'>
       <div>
         <div className='image-container'>
-            <img src={urlFor(image && image[index])} alt="img" class="product-detail-image"/> 
+            <img src={urlFor(image && image[index])} alt="img" className="product-detail-image"/> 
         </div>
         <div className='small-images-container'>
            {image?.map((item,i)=>(
@@ -56,13 +56,13 @@ const ProductDetail= ({product,products}) => {
             <div className='quantity'>
             <h3>Quantity:</h3>
               <p className='quantity-desc'>
-              <span className='minus' onClick={decqty}>
+              <span className='minus' onClick={decQty}>
               <AiOutlineMinus/>
               </span>
               <span className='num'>
               {qty}
               </span>
-              <span className='plus' onClick={incqty}>
+              <span className='plus' onClick={incQty}>
               <AiOutlinePlus/>
               </span>
 
